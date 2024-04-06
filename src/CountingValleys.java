@@ -1,33 +1,34 @@
 import java.io.*;
 
-class Result {
-
-    public static int countingValleys(int steps, String path) {
-        int level = 0;
-        int valleyCount = 0;
-        // If current position is inside a valley
-        boolean inValley = false;
-        for (char c : path.toCharArray()) {
-            // Update the level
-            if (c == 'D') {
-                level--;
-            } else {
-                level++;
-            }
-
-            // Just stepping into a valley, Update valley count
-            if (!inValley && level < 0) {
-                inValley = true;
-                valleyCount++;
-            } else if (level == 0) {
-                inValley = false;
-            }
-        }
-        return valleyCount;
-    }
-}
-
 public class CountingValleys {
+
+    static class Result {
+
+        public static int countingValleys(int steps, String path) {
+            int level = 0;
+            int valleyCount = 0;
+            // If current position is inside a valley
+            boolean inValley = false;
+            for (char c : path.toCharArray()) {
+                // Update the level
+                if (c == 'D') {
+                    level--;
+                } else {
+                    level++;
+                }
+
+                // Just stepping into a valley, Update valley count
+                if (!inValley && level < 0) {
+                    inValley = true;
+                    valleyCount++;
+                } else if (level == 0) {
+                    inValley = false;
+                }
+            }
+            return valleyCount;
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter =
