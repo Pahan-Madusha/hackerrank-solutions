@@ -1,5 +1,6 @@
 import java.io.*;
 
+/** <a href="https://www.hackerrank.com/challenges/drawing-book/problem">...</a> */
 public class DrawingBook {
     static class Result {
 
